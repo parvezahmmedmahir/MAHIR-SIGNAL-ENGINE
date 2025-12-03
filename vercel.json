@@ -35,9 +35,5 @@
             "src": "/(.*)",
             "dest": "/public/$1"
         }
-    ],
-    "env": {
-        "QUOTEX_EMAIL": "@quotex_email",
-        "QUOTEX_PASSWORD": "@quotex_password"
-    }
+    ]
 }
