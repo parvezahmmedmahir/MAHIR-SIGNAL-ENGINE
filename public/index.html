@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAHIR - Advanced Quotex Signal Generator</title>
+    <meta name="description" content="Professional Quotex Future Signal Generator with Advanced Technical Analysis">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>⚡ MAHIR SIGNAL ENGINE ⚡</h1>
+            <p class="subtitle">Advanced Quotex Future Signal Generator | 1-Minute Timeframe | 100% Sure Signals</p>
+            <div class="badge">🎯 CLICK "GENERATE 10 SIGNALS" TO GET MULTIPLE SIGNALS!</div>
+        </header>
+
+        <!-- Stats Panel -->
+        <div class="stats-panel">
+            <div class="stat-card">
+                <div class="stat-value" id="total-signals">0</div>
+                <div class="stat-label">Total Signals</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="avg-confidence">0/20</div>
+                <div class="stat-label">Daily Remaining</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="total-assets">80+</div>
+                <div class="stat-label">Available Assets</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="live-status">●</div>
+                <div class="stat-label">System Status</div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="controls-grid">
+                <div class="control-group">
+                    <label for="timezone">Timezone (UTC)</label>
+                    <input type="number" id="timezone" value="6" min="-12" max="14" step="1">
+                </div>
+                <div class="control-group">
+                    <label for="timeframe">Timeframe</label>
+                    <select id="timeframe">
+                        <option value="1" selected>1 MINUTE</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="martingale">Martingale (MTG)</label>
+                    <select id="martingale">
+                        <option value="1" selected>1 STEP</option>
+                        <option value="2">2 STEP</option>
+                        <option value="3">3 STEP</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" id="btn-all-assets"
+                    style="font-size: 1.1rem; padding: 18px 28px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); box-shadow: 0 4px 20px rgba(16, 185, 129, 0.5);">
+                    🚀 GENERATE 10 SIGNALS (CLICK HERE!)
+                </button>
+                <button class="btn btn-secondary" id="btn-single">
+                    🎯 Single Signal (1 Only)
+                </button>
+                <button class="btn btn-secondary" id="btn-live">
+                    ▶️ Start Live Mode (30s)
+                </button>
+                <button class="btn btn-secondary" id="btn-stop" disabled>
+                    ⏸️ Stop Live
+                </button>
+                <button class="btn btn-secondary" id="btn-export">
+                    📋 Copy All Signals
+                </button>
+                <button class="btn btn-secondary" id="btn-clear">
+                    🗑️ Clear All
+                </button>
+            </div>
+        </div>
+
+        <!-- Signals Section -->
+        <div class="signals-section">
+            <div class="section-header">
+                <h2 class="section-title">📊 Premium Signals (100% Sure)</h2>
+                <span class="signal-count" id="signal-count">0 signals</span>
+            </div>
+            <div class="signals-container" id="signals-container">
+                <div style="text-align: center; padding: 40px; color: var(--text-muted);">
+                    <p style="font-size: 1.2rem; margin-bottom: 15px;">👆 Click the GREEN button above to generate 10
+                        signals!</p>
+                    <p style="font-size: 0.9rem;">🚀 "GENERATE 10 SIGNALS" = Multiple signals at once</p>
+                    <p style="font-size: 0.9rem;">🎯 "Single Signal" = Only 1 signal</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>⛩ <strong>RULES</strong> ⛩</p>
+            <p>✧ USE SAFETY MARGIN</p>
+            <p>✧ BACK 2 BACK LOSS = SKIP</p>
+            <p>✧ MTG (MARTINGALE) RECOMMENDED</p>
+            <p style="margin-top: 10px;">━━━━━━━━━━━━━━━━━⍟✧ <strong>X MAHIR SYSTEM</strong> ✧</p>
+            <p>═══❰ <strong>OWNER @LUX_DOT</strong> 💸 ❱══❍⊱</p>
+            <p style="margin-top: 15px; font-size: 0.75rem;">⚠️ Signals are for educational purposes only. Trade
+                responsibly.</p>
+            <p style="font-size: 0.75rem;">© 2024 MAHIR Signal Engine | Advanced Technical Analysis System</p>
+        </footer>
+        <!-- History Modal -->
+        <div id="history-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="modal-title">Asset History</h2>
+                <div id="history-chart-container">
+                    <div class="history-list" id="history-list">
+                        <!-- History items will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

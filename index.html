@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Quotex Future Signal Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <main class="container">
+        <header class="hero">
+            <h1>◇──◇──◇──◇──◇──◇──◇──◇ <span class="accent">❈ UTC/GMT :</span> <span id="tz-display">(+6:00) 🇧🇩</span>
+                <span class="accent">❈ 1STEP MARTINGALE ❈ 1MINUTE TIMEFRAME</span> ◇──◇──◇──◇──◇──◇──◇──◇
+            </h1>
+            <p class="sub">Quotex Future Signal Generator — demo / simulated signals only</p>
+        </header>
+
+        <section class="controls">
+            <div class="row">
+                <label>Timezone offset (hours):
+                    <input type="number" id="tz-offset" step="1" min="-12" max="14" value="6" />
+                </label>
+
+                <label>Timeframe:
+                    <select id="timeframe">
+                        <option value="1">1 MIN</option>
+                    </select>
+                </label>
+
+                <label>Martingale steps:
+                    <select id="martingale">
+                        <option value="1">1 STEP</option>
+                        <option value="2">2 STEP</option>
+                        <option value="3">3 STEP</option>
+                    </select>
+                </label>
+
+                <label>Pairs (comma separated):
+                    <input id="pairs"
+                        value="EURUSD-OTC,USDCOP-OTC,BRLUSD-OTC,MCD-OTC,USDARS-OTC,USDTRY-OTC,USDBDT-OTC,USDMXN-OTC,USDINR-OTC,USDPKR-OTC" />
+                </label>
+            </div>
+
+            <div class="row actions">
+                <button id="gen-single">Generate Single Signal</button>
+                <button id="gen-batch">Generate Batch (10)</button>
+                <button id="start-live">Start Live (every 30s)</button>
+                <button id="stop-live" disabled>Stop Live</button>
+                <button id="export-text">Copy / Export</button>
+            </div>
+        </section>
+
+        <section class="signals">
+            <h2>Signals</h2>
+            <div id="signals-list" class="signals-list" aria-live="polite"></div>
+        </section>
+
+        <section class="rules">
+            <h3>⛩ RULES</h3>
+            <pre class="rules-text">
+✧ MUST BE USE SAFETY MARGIN
+✧ BACK 2 BACK 2 LOSS SKIP MUST
+━━━━━━━━━━━━━━━━━⍟✧  X MAHIR SYSTEM  ✧
+═══❰  OWNER  @MAHIR 💸 ❱══❍⊱
+      </pre>
+        </section>
+
+        <footer class="footer">
+            <small>Generated signals are simulated. Use with care — this tool does not provide financial advice.</small>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
